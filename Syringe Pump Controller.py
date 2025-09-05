@@ -8,7 +8,7 @@ def send_cmd(cmd):
     time.sleep(0.1)
 
 Pump_Program = """
-*DIA 32.50
+*DIA 29.20
 *VOL ML
 *TRGFT
 *AL 0
