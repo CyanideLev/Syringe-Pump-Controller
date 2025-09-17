@@ -1,0 +1,1 @@
+Simple python script to write pump program to NE-1000x Syringe Pump Dual System using X-firmware continuous infusion mode. Modified from https://blog.darwin-microfluidics.com/how-to-control-your-ne1000-syringe-pump-with-python/. 
