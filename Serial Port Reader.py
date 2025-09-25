@@ -8,11 +8,12 @@ def key_press(event):   #Break loop when Q is pressed on keyboard
         running = False
 
 def serial_listen():
+    port = serial.Serial('COM3', 19200, parity=serial.PARITY_NONE, bytesize=8, stopbits=1, timeout=None, xonxoff=0, rtscts=0)
+    
     running = True
     keyboard.on_press(key_press)
 
     while running:
-        port = serial.Serial('COM3', 19200, parity=serial.PARITY_NONE, bytesize=8, stopbits=1, timeout=None, xonxoff=0, rtscts=0) #Open serial port using settings required by pump on COM3
         x = serial.readline()
         
         print (x)
