@@ -15,7 +15,7 @@ def serial_listen():
         
         print (y)
         
-        if cv.waitKey(1) == ord('q'):
+        if cv.waitKey(1)==ord('q'):
             break
     
     port.close()
