@@ -1,0 +1,24 @@
+Pump_Program = """
+
+DIA 29.20
+VOL ML
+
+PHN 1 
+FUN RAT 
+RAT 005.0 MM 
+VOL 10.00
+
+PHN 2 
+FUN RAT
+RAT 500 MH 
+VOL 0
+
+PHN 3 
+FUN RAT
+RAT 200 MH 
+VOL 0.1
+
+PHN 4 
+FUN RAT
+RAT 11 MH
+"""

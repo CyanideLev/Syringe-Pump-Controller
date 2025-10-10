@@ -4,7 +4,7 @@ import cv2 as cv
 
 def serial_listen():
     
-    port = serial.Serial('COM4', 19200, parity=serial.PARITY_NONE, bytesize=8, stopbits=1, timeout=10, xonxoff=0, rtscts=0)
+    port = serial.Serial('COM3', 19200, parity=serial.PARITY_NONE, bytesize=8, stopbits=1, timeout=10, xonxoff=0, rtscts=0)
 
     print ('Listening...')
 
@@ -13,7 +13,8 @@ def serial_listen():
         x = port.read()
         y = x.decode('utf-8')
         
-        print (y)
+        with open("output.txt", "a") as f:
+            print (y, end=" ", file=f)
         
         if cv.waitKey(1)==ord('q'):
             break

@@ -8,38 +8,48 @@ def send_cmd(cmd):
     time.sleep(0.1)
 
 Pump_Program = """
-DIA 29.20
-VOL ML
-TRGFT
-AL 0
-PF 0
-BP 0
+*ADR CONT
+*DIA 29.20
+*VOL ML
 
-PHN 1 
-FUN RAT 
-RAT 100 MH 
-VOL 5
+*PHN 1
+*FUN RAT 
+*RAT 005.0 MM 
+*VOL 10.00 
 
-PHN 2 
-FUN RAT
-RAT 500 MH 
-VOL 0
+*PHN 2
+*FUN RAT
+*RAT 07.00 MM 
+*VOL 0.000
 
-PHN 3 
-FUN RAT
-RAT 200 MH 
-VOL 0.1
+*PHN 3 
+*FUN RAT
+*RAT 005.0 MM 
+*VOL 0.100
 
-PHN 4 
-FUN RAT
-RAT 11 MH
+*PHN 4
+*FUN RAT
+*RAT 0011 MH
+*VOL 0.000 
+
+RESET
 """
+
+send_cmd("*STP")
+
+time.sleep(0.1)
+
+send_cmd("*RESET")
+
+time.sleep(0.1)
 
 for line in Pump_Program.split('\n'):
     line = line.strip()
     if line:
         send_cmd(line)
 
-send_cmd("RUN")
+time.sleep(0.1)     
+
+send_cmd("*RUN")
 
 port.close()
