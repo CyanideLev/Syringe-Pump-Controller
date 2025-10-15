@@ -32,7 +32,6 @@ Pump_Program = """
 *RAT 0011 MH
 *VOL 0.000 
 
-RESET
 """
 
 send_cmd("*STP")
@@ -48,7 +47,11 @@ for line in Pump_Program.split('\n'):
     if line:
         send_cmd(line)
 
-time.sleep(0.1)     
+time.sleep(0.1)
+
+send_cmd("RESET")
+
+time.sleep(0.1)
 
 send_cmd("*RUN")
 
